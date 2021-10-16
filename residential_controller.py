@@ -127,7 +127,7 @@ class Elevator:
             floorRequestButtonID+=1
 
             
-    def requestFloor(self,floor):
+    def requestFloor(self,floor): # this method make the logic of the elevator, it moves it operate its doors...
         self.floorRequestList.append(floor)
         self.move()
         self.operateDoors()
