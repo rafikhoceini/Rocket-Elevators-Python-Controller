@@ -1,34 +1,28 @@
-# Rocket-Elevators-Python-Controller
-This is the template to use for the python residential controller. You will find the classes that should be used along with some methods described in the requirements. The necessary file to run some tests is also included. 
+### Description python
 
-### Installation
+The purpose of this code is to dictate how an elevator will work when a person call it when pressing a button from the outside or the inside of the elevator. This code also manages which elevator is to be sent depending on its direction, location in the column, its availability… In short, the code manages which elevator is optimal to be sent, it manages the operation of the door and the movement of the elevator.
 
-First, depending on your python version, make sure to install the Package Installer for Python (PIP) if needed:
+### Dependencies 
+  To run the program you need the following:
 
-https://pip.pypa.io/en/stable/installing/
+- Visual Studio Code
+- Command Prompt
+- Python
+- PIP
+- Pytest
 
-Next, install Pytest:
+Notice: when installing python from windows or mac store, it already comes with PIP
 
-https://docs.pytest.org/en/6.2.x/getting-started.html
+### Usage:
 
-### Running the tests
+To try the program, you need:
 
-To launch the tests:
+Type on command Prompt this: test :python -m pytest
 
-`pytest`
+Once again you need to target the right file 
 
-With a fully completed project, you should get an output like:
+Example:
 
-![Screenshot from 2021-06-15 13-13-13](https://user-images.githubusercontent.com/28630658/122095645-a41fa000-cddb-11eb-9322-81a766cce4bb.png)
+C:\Users\rafik\Odyssey2 python> python -m pytest .\Rocket-Elevators-Python-Controller\
 
-You can also get more details about each test by adding the `-v` flag: 
-
-`pytest -v` 
-
-which should give something like: 
-
-![Screenshot from 2021-06-15 13-13-33](https://user-images.githubusercontent.com/28630658/122095759-c74a4f80-cddb-11eb-999d-dfe35dbe7d18.png)
-
-The test file can be left in your final project but no scenarios should be present in your code. The grader will run tests similar to the ones provided.
-
-Of course, make sure to edit this Readme file to describe your own project!
+Here I am targeting the folder where my python code is at, the folder in question is:  Rocket-Elevators-Python-Controller
