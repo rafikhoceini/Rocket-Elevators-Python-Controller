@@ -14,7 +14,9 @@ class Column:
        self.createElevators(_amountOfFloors,_amountOfElevators)
        self.createCallButtons(_amountOfFloors)
 
-    def createCallButtons(self,_amountOfFloors):
+       #---------------------------------Methods--------------------------------------------
+   
+    def createCallButtons(self,_amountOfFloors):    # this method creates Callbuttons
         global callButtonID
         self.buttonFloor = 1
         self.callButton = 0
@@ -30,7 +32,7 @@ class Column:
                 callButtonID+=1
             self.buttonFloor+=1
 
-    def createElevators(self,_amountOfFloors,_amountOfElevators):
+    def createElevators(self,_amountOfFloors,_amountOfElevators):  # this method creates elevators based on elevator class
         global elevatorID
 
         for elevatorindex in range(_amountOfElevators):
@@ -39,7 +41,7 @@ class Column:
             elevatorID+=1
 
     
-    def requestElevator(self, floor, direction):
+    def requestElevator(self, floor, direction):     # this method is the one that makes the elevators work, it call the logic the motion and the operation of the elevator
         elevator = self.findElevator(floor,direction)
         elevator.floorRequestList.append(floor)
         elevator.move()
@@ -49,7 +51,7 @@ class Column:
 
 
 
-    def findElevator(self,requestedFloor,requestedDirection):
+    def findElevator(self,requestedFloor,requestedDirection): # this method asigns a score depending on the condition of the elevator, the smaller the better
         bestElevator = {}
         bestScore = 5
         referenceGap = 10000000
@@ -77,7 +79,7 @@ class Column:
 
         return bestElevator
     
-    def checkIfElevatorIsBetter(self,scoreToCheck,newElevator,bestScore,referenceGap,bestElevator,floor):
+    def checkIfElevatorIsBetter(self,scoreToCheck,newElevator,bestScore,referenceGap,bestElevator,floor):  # this method is the one that checks which elevator is better based on score
         if scoreToCheck<bestScore:
             bestScore = scoreToCheck
             bestElevator = newElevator
@@ -113,8 +115,9 @@ class Elevator:
 
         self.createFloorRequestButtons(_amountOfFloors)
 
-
-    def createFloorRequestButtons(self,_amountOfFloors):
+#---------------------------------------------Methods---------------------------------------
+   
+    def createFloorRequestButtons(self,_amountOfFloors): #method create FloorRequestButtons
         global floorRequestButtonID
         buttonFloor = 1
         for element in range(_amountOfFloors):
@@ -129,7 +132,7 @@ class Elevator:
         self.move()
         self.operateDoors()
 
-    def move(self):
+    def move(self):  # this is the method that makes the elevator move
         while len(self.floorRequestList) != 0:
             destination = self.floorRequestList[0]
             self.status ='moving'
@@ -152,13 +155,13 @@ class Elevator:
 
         self.status = 'idle'
 
-    def sortFloorList(self):
+    def sortFloorList(self):  # this is a method that sorts the floors for the floorRequestList
         if self.direction =='up':
             self.floorRequestList.sort()
 
         else: self.floorRequestList.sort(reverse = True)
 
-    def operateDoors(self):
+    def operateDoors(self):   # this is method to operate doors, open close...
         overweight = False
         doorIsObstructed = False
         self.door.status == "open"
@@ -173,7 +176,7 @@ class Elevator:
                 self.alarm()
 
 
-    def alarm(self):
+    def alarm(self):  # not really a method, just for the sake of creating it so we call call it above
         alarm = 4
 
 
@@ -202,3 +205,7 @@ class Door:
     def __init__(self, _id):
         self.ID = _id
         self.status = ''
+
+
+class floor:
+    ffff=3
